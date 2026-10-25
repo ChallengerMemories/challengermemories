@@ -10,8 +10,8 @@ export const connectDB = async () => {
 
   console.log("DB URI:", process.env.MONGODB_URI);
   if (mongoose.connection.readyState >= 1) return;
-  return mongoose.connect(MONGODB_URI);
-};
+  return mongoose.connect(MONGODB_URI, { dbName: "space"
+});
 
 const storySchema = new mongoose.Schema({
   name:      { type: String, required: true },
